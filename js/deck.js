@@ -1,29 +1,36 @@
 console.log("deck loaded");
-var cardArray = [];
-var suits = ["Spade", "Heart", "Diamond", "Club"];
-var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"];
 
-var fillDeck = function(){
-	for(var i = 0; i<suits.length; i++){
-		for(var j = 0; j<values.length; j++){
-			if(values[j] == "Ace"){
+var Deck = function(){
+	this.cardArray = [];
+	this.suits = ["Spade", "Heart", "Diamond", "Club"];
+	this.values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"];
+	this.fillDeck();
+}
+
+Deck.prototype.fillDeck = function() {
+	var array = []
+	for(var i = 0; i<this.suits.length; i++){
+		for(var j = 0; j<this.values.length; j++){
+			if(this.values[j] == "Ace"){
 				//create an ace
-				cardArray.unshift(new Card(suits[i], values[j], 1));
-			} else if(isNaN(values[j])==true){
+				this.cardArray.unshift(new Card(this.suits[i], this.values[j], 1));
+			} else if(isNaN(this.values[j])==true){
 				//creat a face card, num value is 10
-				cardArray.unshift(new Card(suits[i], values[j], 10));
+				this.cardArray.unshift(new Card(this.suits[i], this.values[j], 10));
 			} else {
 				//num card, value is set to number
-				cardArray.unshift(new Card(suits[i], values[j], values[j]));
+				this.cardArray.unshift(new Card(this.suits[i], this.values[j], this.values[j]));
 			}
 		}
 	}
-}
+};
 
-var printDeck = function(){
-	
-	for(var i = 0; i<cardArray.length; i++){
-		console.log(cardArray[i].suit + " " + cardArray[i].fValue + " " + cardArray[i].nValue);
+//for testing!
+Deck.prototype.printDeck = function() {
+	for(var i = 0; i<this.cardArray.length; i++){
+		console.log(this.cardArray[i].suit + " " 
+					+ this.cardArray[i].fValue + " " 
+					+ this.cardArray[i].nValue);
 	}
 	
-}
+};
