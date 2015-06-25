@@ -18,8 +18,8 @@
 
 ##Program Structure##
 Build a Deck
-A deck is an array of card objects. Each Deck with have 52 cards
-Each card is an object. It has suit, face_value, numeric_value, and visibility, initially set to false (hidden)
+A deck is an object, containes an array of card objects with 52 cards
+Each card is an object. It has suit, face_value, numeric_value, and visibility, initially set to false (hidden) //is this needed?
 
 ###Hand###
 Object, build with a constructor, protoype behaviors
@@ -28,8 +28,8 @@ Attributes
 +is an object (?)
 +It has an array to hold cards
 +variable to hold the bet
-+insurance, boolean to play with insurance
-+surrender, boolean to allow surrender
++insurance, boolean to play with insurance //move to game object 
++surrender, boolean to allow surrender //move to game object
 
 Behaviors
 +Stand, do add any cards to the array, proceed to check
@@ -37,7 +37,7 @@ Behaviors
 +double, multiply the bet by 2, hit with another card, check for a bust
 +surrender, dive the bet by 2, end the hand
 +split, special case, if the array has two hands with the same value, split will create will create two new hands, passing one card from this hand to start that hand and getting a new random card from the deck. (maybe this should be a function of the game object)
-+function to find the value of of the cards in the array
++function to find the value of of the cards in the array 
 +check natural, see if the value of the cards is equal to 21
 +checkbust, see if the value is greater than 21. return a bust if it is, maybe set the value to zero?
 !think about how to hand the ace in each function
