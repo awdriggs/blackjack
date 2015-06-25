@@ -1,12 +1,14 @@
 console.log("hand loaded");
 
-var Hand = function(card1, card2){
-	this.cards = [card1, card2];
+var Hand = function(owner){
+	this.cards = [];
+	this.stand = false;
+	this.owner = owner;
 }
 
 //behaviors
-//stand, add cards to the array
-Hand.prototype.stand = function(newCard) {
+//hit, add cards to the array
+Hand.prototype.hit = function(newCard) {
 	this.cards.push(newCard);
 	return this.cards;
 };
@@ -22,10 +24,20 @@ Hand.prototype.total = function() {
 	return sum;
 };
 
+Hand.prototype.isNatural = function(first_argument) {
+	if(this.cards[0].nValue + this.cards[1].nValue == 21){
+		return true;
+	} else {
+		return false;
+	}
+};
+
+
+
 // //is this even needed? the stand button could just exit a function in the game
-// Hand.prototype.stand = function() {
-// 	var this.total();
-// };
+Hand.prototype.setStand = function() {
+	this.stand = true;
+};
 
 
 //Testing 

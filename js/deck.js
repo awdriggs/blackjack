@@ -13,7 +13,7 @@ Deck.prototype.fillDeck = function() {
 		for(var j = 0; j<this.values.length; j++){
 			if(this.values[j] == "Ace"){
 				//create an ace
-				this.cardArray.unshift(new Card(this.suits[i], this.values[j], 1)); //how am I going to handle the ace value?
+				this.cardArray.unshift(new Card(this.suits[i], this.values[j], 11)); //how am I going to handle the ace value?
 			} else if(isNaN(this.values[j])==true){
 				//creat a face card, num value is 10
 				this.cardArray.unshift(new Card(this.suits[i], this.values[j], 10));
