@@ -34,22 +34,33 @@ Hand.prototype.setStand = function() {
 };
 
 Hand.prototype.getValue = function() {
-	this.value = 0; 
-	for(var i = 0; i < this.cards.length; i++){
-		if(this.cards[i].value === "King"|| this.cards[i].value === "Queen" || this.cards[i].value === "Jack"){
-			this.value += 10
-		} else if(isNaN(this.cards[i].value) == false) { //isNan is needed here so the ace isn't evaluated
-			this.value += this.cards[i].value;
-		} else if(this.cards[i].value === "Ace"){
-			if(this.value > 10) {
-				console.log
-				this.value += 1
-			} 
-			else this.value += 11;
-		} 
+	var value = this.aceFlipper(11);
+	if(value <= 21){
+		this.value = value;
+	} else {
+		this.value = this.aceFlipper(1);
 	}
+
 	return this.value;
 };
+
+Hand.prototype.aceFlipper = function(aceControl) {
+	checkValue = 0; 
+	aceValue = aceControl;
+
+	for(var i = 0; i < this.cards.length; i++){
+		if(this.cards[i].value === "Ace"){
+			checkValue += aceValue;
+		} else if(this.cards[i].value === "King"|| this.cards[i].value === "Queen" || this.cards[i].value === "Jack"){
+			checkValue += 10
+		} else {
+			checkValue += this.cards[i].value;
+		} 
+	}
+
+	return checkValue;
+};
+
 
 Hand.prototype.renderCards = function(numCards, showTotal) {
 	var handString = ""
