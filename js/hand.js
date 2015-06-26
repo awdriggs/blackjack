@@ -13,6 +13,7 @@ var Hand = function(owner){
 //hit, add cards to the array
 Hand.prototype.hit = function(newCard) {
 	this.cards.push(newCard);
+	this.getValue();
 	return this.cards;
 };
 
@@ -41,9 +42,10 @@ Hand.prototype.getValue = function() {
 			this.value += this.cards[i].value;
 		} else if(this.cards[i].value === "Ace"){
 			if(this.value > 10) {
+				console.log
 				this.value += 1
 			} 
-			this.value += 11;
+			else this.value += 11;
 		} 
 	}
 	return this.value;
@@ -83,7 +85,6 @@ Hand.prototype.checkBust = function() {
 
 Hand.prototype.checkOutcome = function(dealerResult) {
 	console.log('checking outcome')
-	
 	//if you and dealer both have a natural, you push
 	if(this.natural == true && dealerResult.natural == true){
 		return 'push';
@@ -111,6 +112,10 @@ Hand.prototype.checkOutcome = function(dealerResult) {
 	//if dealer result is less than your result, you win
 	else if(dealerResult.value < this.value){
 		return 'win';
+	}
+	//if both are under 21, if the dealer is greater than you, you lose
+	else if(dealerResult.value > this.value){
+		return 'lose';
 	}
 	//if your value is equal to the dealers value, you push
 	else if(dealerResult.value === this.value){

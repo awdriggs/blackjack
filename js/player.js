@@ -22,7 +22,6 @@ Player.prototype.result = function(dealerHand){
     //hand outcome is given from the had, natural, win, lose, push
     //effect the balance according to the outcome
     var event = this.hand[0].checkOutcome(dealerHand);
-    debugger;
     //take action depending on the event
     if(event === 'natural'){
         this.balance += this.bet * 3;

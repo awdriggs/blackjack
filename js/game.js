@@ -37,7 +37,6 @@ var game = {
         //get bet from each player
         for (var i = 0; i < this.players.length; i++) {
             var currentBet = parseInt(prompt('player ' + i + ' place a bet'));
-            debugger;
             this.players[i].placeBet(currentBet);
         }
 
