@@ -6,7 +6,7 @@ var Dealer = function() {
 }
 
 //set dealer prototype to inherit player attributes
-Dealer.prototype = new Player()
+Dealer.prototype = new Agent()
 
 //add a deck to the shoe, repeat a specified amount
 Dealer.prototype.buildShoe = function(decksInShoe) {

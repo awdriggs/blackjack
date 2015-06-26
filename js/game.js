@@ -1,8 +1,12 @@
 console.log('game.js loaded');
 //to do
 //write the script to flush the hand and restart the game
-//make the use play as a function player object
+//make the use play as a function player object Done!
 //work on surrender, split, double
+//split is written, not tested enough
+//surrender is written, need to add an penalty for surrendering
+//double is written and tested, haven't handled the payout
+//
 
 
 
@@ -17,13 +21,14 @@ var game = {
 
     startGame: function(numPLayers, numberOfShoes) {
         for (var i = 0; i < numPLayers; i++) {
-            this.players.push(new Player())
+            this.players.push(new Player("player " + i))
         }
         this.dealer.buildShoe(numberOfShoes)
     },
 
     dealCards: function() {
         this.dealer.getHand();
+        debugger;
         for (var i = 0; i < this.players.length; i++) {
             this.players[i].getHand();
             for (var j = 0; j < 2; j++) {
@@ -33,7 +38,8 @@ var game = {
         }
     },
 
-    play: function() {
+    round: function() {
+
         //get bet from each player
         for (var i = 0; i < this.players.length; i++) {
             var currentBet = parseInt(prompt('player ' + i + ' place a bet'));
@@ -49,7 +55,7 @@ var game = {
 
         //show the  cards for each player
         for (var i = 0; i < this.players.length; i++) {
-            console.log('player ' + i + this.players[i].hand[0].renderCards(this.players[i].hand[0].cards.length, true));
+            console.log('player ' + i + " " + this.players[i].hand[0].renderCards(this.players[i].hand[0].cards.length, true));
         }
 
         //check for insurance
@@ -63,35 +69,16 @@ var game = {
                 }
             }
         };
-
+        debugger;
         //let each player play their hand
         for (var i = 0; i < this.players.length; i++) {
-            var currentPlayer = this.players[i].hand[0];
-
-            //check for a natural
-            if (currentPlayer.isNatural()) {
-                //this is a natural, set the natural and move on
-            } else {
-                while (currentPlayer.stand === false && currentPlayer.value < 21) {
-
-                    var move = prompt('enter s to stand, enter h to Hit'); //later, change all this to a dom feature
-
-                    if (move == 's') {
-                        currentPlayer.stand = true;
-                    } else if (move === 'h') {
-                        currentPlayer.hit(this.dealer.deal());
-                        console.log(currentPlayer.renderCards(currentPlayer.cards.length, true));
-                    }
-                }; //end of single player while loop
-            };
+            this.players[i].play(); //let each player play
         }; //end of players loop
 
         //show the two card of the dealer
         console.log(this.dealer.hand[0].renderCards(this.dealer.hand[0].cards.length, true));
 
         //check is see if the dealer got a natural
-
-
         if (this.dealer.hand[0].isNatural()) {
             //if yes, pay our insurance to players who excepted it
             for (var i = 0; i < this.players.length; i++) {
@@ -107,7 +94,13 @@ var game = {
         }
 
         //end the hand, flush the cards
+        this.flush();
         //end of this round, run play again?
+        var choice = confirm('play again?');
+
+        if(choice === true){
+            this.round();
+        }
     },
 
     checkResult: function() {
@@ -115,5 +108,18 @@ var game = {
             this.players[i].result(this.dealer.hand[0]);
         }
     },
+
+    flush: function() {
+         for (var i = 0; i < this.players.length; i++) {
+            this.players[i].hand = [];
+            
+        }
+        this.dealer.hand = [];
+    }
+
+    //function to flush the hand of each player
+      // for(var i = 0; i < this.players.length; i++) {
+      //       this.players[i].result(this.dealer.hand[0]);
+      //   }
 
 }

@@ -6,6 +6,7 @@ var Hand = function(owner){
 	//this.bust = false; //still needed?
 	this.natural = false;
 	this.value = 0; 
+	this.canSplit = false;
 	//this.outcome = ""; //still needed? 
 }
 
@@ -18,7 +19,7 @@ Hand.prototype.hit = function(newCard) {
 };
 
 Hand.prototype.isNatural = function() {
-	if(this.cards[0].nValue + this.cards[1].nValue == 21){
+	if(this.value == 21){
 		this.natural = true;
 		return true;
 	} else {
@@ -109,7 +110,7 @@ Hand.prototype.checkOutcome = function(dealerResult) {
 		return 'natural';
 	} 
 	//if dealer results is greter that 21, you win
-	else if(dealerResult.value > 21 && this.result <= 21){
+	else if(dealerResult.value > 21 && this.value <= 21){
 		return 'win';
 	}
 	//if your value is greater than 21, you lose
@@ -126,6 +127,7 @@ Hand.prototype.checkOutcome = function(dealerResult) {
 	}
 	//if both are under 21, if the dealer is greater than you, you lose
 	else if(dealerResult.value > this.value){
+		debugger;
 		return 'lose';
 	}
 	//if your value is equal to the dealers value, you push
