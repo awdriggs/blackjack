@@ -1,10 +1,22 @@
 /*color*/
-$green: #5fda4f; //rgba(95, 218, 79, 100)
+$green: #8BD781; //rgba(95, 218, 79, 100)
 $lightGreen: #d3fad6; //rgba(211, 250, 214, 100)
 $red: #d71816; //rgba(215, 24, 22, 100)
 $grey: #6b6054; //rgba(107, 96, 84, 100)
 $black: #303030; //rgba(48, 48, 48, 100)
-$yellow: #cba52c;
+$yellow: #F4D54A;
+$lightGrey: #CFD3CD;
+$white: #EDF2EB;
+$blue: #1C77C3;
+
+/*mixins*/
+@mixin circle($width) {
+  width: $width;
+  height: $width;
+  -webkit-border-radius: $width/2;
+     -moz-border-radius: $width/2;
+          border-radius: $width/2;
+}
 
 /*rules*/
 body{
@@ -18,13 +30,14 @@ body{
 	max-width: 1400px;
 	height: 800px;
 	margin:0 auto;
+	background-color: $lightGreen;
 	
 }
 
 #newGame{
 	display:block;
 	h1{	
-		letter-spacing: -.25rem;
+		
 		font-weight: 700;
 		text-align: center;
 		color: $green;
@@ -34,9 +47,11 @@ body{
 .title_screen{
 	width: 700px;
 	margin: 0 auto;
-	margin-top: 300px;
-
+	/*margin-top: 300px;*/
+	position: relative;
+	top: 300px;
 	h1{	
+		letter-spacing: -.5rem;
 		font-size: 8rem;
 	}
 }
@@ -44,6 +59,7 @@ body{
 .play_screen {
 	width: 260px;
 	h1{
+		letter-spacing: -.1rem;
 		font-size: 3rem;
 	}
 }
@@ -59,8 +75,8 @@ body{
 #menu{
 	font-size: 1.5rem;
 	width: 300px;
-	
-	position: fixed;
+	padding:10px;
+	position: relative;
 	background-color: $green;
 	color: $grey;
 	text-align: center;
@@ -142,4 +158,93 @@ label.css-label {
 	-ms-user-select: none;
 	user-select: none;
 }
+
+/*game board styling*/
+#dealer {
+	width: 1400px;
+	height: 260px;
+}
+
+#banner {
+	width: 1400px;
+	height: 150px;
+	background: url(../img/banner.png);
+	
+	
+	#message{
+		margin: 0 auto;
+		padding-top: 25px;
+		max-width: 740px;
+		font-size: 3rem;
+		text-align: center;
+		color: $green;
+	}
+}
+
+#player {
+	width: 1400px;
+	height: 260px;
+}
+
+#footer {
+	color: $grey;
+	width: 1400px;
+	height: 130px;
+	border-radius:10px;
+	background-color: $green;
+	text-align: center;
+	display: flex;
+
+	font-size: 3.4rem;
+
+    #indicate_player{
+    	margin-top:23px;
+    	width: 440px;
+
+    }
+
+	#bet_box{
+		margin-top:23px;
+		display: flex;
+		width: 540px;
+
+	}
+
+	#balance_box{
+		margin-top:23px;
+		width: 440px;
+	}
+
+	.bet_button{
+		@include circle(84px);
+		margin-left: 4%;
+
+		
+
+	}
+	
+}
+
+
+
+.one{
+	background-color: $white;
+}
+
+.five{
+	background-color: $red;
+}
+
+.twentyFive{
+	background-color: $blue;
+}
+
+.hundred{
+	background-color: $yellow;
+}
+
+.fiveHundred{
+	background-color: $black;
+}
+
 

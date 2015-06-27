@@ -2,8 +2,8 @@
 
 ## User Stories ##
 1. When starting the app, I want to see a title screen with a start button.
-2. Once Game is started, I want to see my balance in $.
-3. I want a way to bet in different chip denominations, $1, $5, $25, $100, $500.
+2. Once Game is started, I want to see my balance in $. 
+3. I want a way to bet in different chip denominations, $1, $5, $25, $100, $500. 
 4. When I place a bet, I want to see my balance update.
 5. I want a way to cancel my bet.
 6. Once my bet is placed, I want to see a deal button that would start the current hand.
@@ -71,7 +71,8 @@ on start screen
 +checkbox for surrender
 
 
-
+known issues
++dealer deals two many cards in multi player mode
 
 
 

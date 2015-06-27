@@ -1,4 +1,5 @@
 /*color*/
+/*mixins*/
 /*rules*/
 body {
   font-family: 'Roboto Slab', sans-serif;
@@ -9,38 +10,43 @@ body {
 #wrapper {
   max-width: 1400px;
   height: 800px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background-color: #d3fad6; }
 
 #newGame {
   display: block; }
   #newGame h1 {
-    letter-spacing: -.25rem;
     font-weight: 700;
     text-align: center;
-    color: #5fda4f; }
+    color: #8bd781; }
 
 .title_screen {
   width: 700px;
   margin: 0 auto;
-  margin-top: 300px; }
+  /*margin-top: 300px;*/
+  position: relative;
+  top: 300px; }
   .title_screen h1 {
+    letter-spacing: -.5rem;
     font-size: 8rem; }
 
 .play_screen {
   width: 260px; }
   .play_screen h1 {
+    letter-spacing: -.1rem;
     font-size: 3rem; }
 
 #newGame:hover {
-  background-color: #5fda4f; }
+  background-color: #8bd781; }
   #newGame:hover h1 {
     color: #d3fad6; }
 
 #menu {
   font-size: 1.5rem;
   width: 300px;
-  position: fixed;
-  background-color: #5fda4f;
+  padding: 10px;
+  position: relative;
+  background-color: #8bd781;
   color: #6b6054;
   text-align: center;
   border-radius: 10px; }
@@ -72,7 +78,7 @@ button {
   margin: 15px;
   padding: 10px;
   color: #6b6054;
-  background: #5fda4f;
+  background: #8bd781;
   border: solid 2px #6b6054;
   border-radius: 5px; }
 
@@ -119,4 +125,65 @@ label.css-label {
   -ms-user-select: none;
   user-select: none; }
 
-/*# sourceMappingURL=styles.css.map */
+/*game board styling*/
+#dealer {
+  width: 1400px;
+  height: 260px; }
+
+#banner {
+  width: 1400px;
+  height: 150px;
+  background: url(../img/banner.png); }
+  #banner #message {
+    margin: 0 auto;
+    padding-top: 25px;
+    max-width: 740px;
+    font-size: 3rem;
+    text-align: center;
+    color: #8bd781; }
+
+#player {
+  width: 1400px;
+  height: 260px; }
+
+#footer {
+  color: #6b6054;
+  width: 1400px;
+  height: 130px;
+  border-radius: 10px;
+  background-color: #8bd781;
+  text-align: center;
+  display: flex;
+  font-size: 3.4rem; }
+  #footer #indicate_player {
+    margin-top: 23px;
+    width: 440px; }
+  #footer #bet_box {
+    margin-top: 23px;
+    display: flex;
+    width: 540px; }
+  #footer #balance_box {
+    margin-top: 23px;
+    width: 440px; }
+  #footer .bet_button {
+    width: 84px;
+    height: 84px;
+    -webkit-border-radius: 42px;
+    -moz-border-radius: 42px;
+    border-radius: 42px;
+    margin-left: 4%; }
+
+.one {
+  background-color: #edf2eb; }
+
+.five {
+  background-color: #d71816; }
+
+.twentyFive {
+  background-color: #1c77c3; }
+
+.hundred {
+  background-color: #f4d54a; }
+
+.fiveHundred {
+  background-color: #303030; }
