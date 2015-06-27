@@ -1,0 +1,145 @@
+/*color*/
+$green: #5fda4f; //rgba(95, 218, 79, 100)
+$lightGreen: #d3fad6; //rgba(211, 250, 214, 100)
+$red: #d71816; //rgba(215, 24, 22, 100)
+$grey: #6b6054; //rgba(107, 96, 84, 100)
+$black: #303030; //rgba(48, 48, 48, 100)
+$yellow: #cba52c;
+
+/*rules*/
+body{
+	font-family: 'Roboto Slab', sans-serif;
+	/*font weights 100, 300. 400, 700*/
+	background-color: $lightGreen;
+	color: $black;
+}
+
+#wrapper{
+	max-width: 1400px;
+	height: 800px;
+	margin:0 auto;
+	
+}
+
+#newGame{
+	display:block;
+	h1{	
+		letter-spacing: -.25rem;
+		font-weight: 700;
+		text-align: center;
+		color: $green;
+	}
+}
+
+.title_screen{
+	width: 700px;
+	margin: 0 auto;
+	margin-top: 300px;
+
+	h1{	
+		font-size: 8rem;
+	}
+}
+
+.play_screen {
+	width: 260px;
+	h1{
+		font-size: 3rem;
+	}
+}
+
+#newGame:hover{
+		background-color: $green;
+		
+		h1{
+			color:$lightGreen;
+		}
+}
+
+#menu{
+	font-size: 1.5rem;
+	width: 300px;
+	
+	position: fixed;
+	background-color: $green;
+	color: $grey;
+	text-align: center;
+
+	border-radius: 10px;
+	h3{
+		margin:10px;
+	}
+	input{
+		color: $grey;
+		background-color: $lightGreen;
+		width: 60px;
+		font-size: 1.5rem;
+		text-align: right;
+		padding: 10px;
+		border: none;
+		border-bottom: solid 2px $grey;
+		transition: border 0.3s;
+		margin: 15px;
+	}
+	input:focus, input[type="number"].focus {
+		border-bottom: solid 2px $grey;
+	}
+}
+
+.hidden{
+	display: none;
+}
+
+.visible{
+	display: visible;
+}
+
+button{
+	width: 100px;
+	font-size: 1.5rem;
+	margin: 15px;
+	padding: 10px;
+	color: $grey;
+	background: $green;
+	border: solid 2px $grey;
+	border-radius: 5px;
+}
+
+button:hover{
+	background-color:$grey;
+	color:$lightGreen;
+}
+
+button:focus, input:focus {outline:0;}
+
+/*checkbox stylingd*/
+input[type=checkbox].css-checkbox {
+	position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:29px;
+	height:24px; 
+	display:inline-block;
+	line-height:24px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:24px;
+	vertical-align:middle;
+	cursor:pointer;
+
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 -24px;
+}
+label.css-label {
+	background-image:url('checkbox.jpg');
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+

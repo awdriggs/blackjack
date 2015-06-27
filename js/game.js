@@ -4,7 +4,7 @@ console.log('game.js loaded');
 //make the use play as a function player object Done!
 //work on surrender, split, double
 //split is written, not tested enough
-//surrender is written, need to add an penalty for surrendering
+//surrender is written, need to add a penalty for surrendering
 //double is written and tested, haven't handled the payout
 //
 
@@ -20,6 +20,7 @@ var game = {
     dealer: new Dealer(), //create a new dealer object
 
     startGame: function(numPLayers, numberOfShoes) {
+        this.players = []; //purge the players array
         for (var i = 0; i < numPLayers; i++) {
             this.players.push(new Player("player " + i))
         }
@@ -28,7 +29,6 @@ var game = {
 
     dealCards: function() {
         this.dealer.getHand();
-        debugger;
         for (var i = 0; i < this.players.length; i++) {
             this.players[i].getHand();
             for (var j = 0; j < 2; j++) {
@@ -38,6 +38,7 @@ var game = {
         }
     },
 
+//move this to the app.js function?
     round: function() {
 
         //get bet from each player
@@ -69,7 +70,6 @@ var game = {
                 }
             }
         };
-        debugger;
         //let each player play their hand
         for (var i = 0; i < this.players.length; i++) {
             this.players[i].play(); //let each player play
@@ -84,7 +84,7 @@ var game = {
             for (var i = 0; i < this.players.length; i++) {
                 if (this.players[i].insured) {
                     //if insured, add the bet to the balance
-                    this.players[i].balance += this.players[i].bet();
+                    this.players[i].balance += this.players[i].bet;
                 }
                 this.checkResult();
             }

@@ -62,7 +62,7 @@ Player.prototype.play = function() {
             //offer split
             console.log("split available");
             this.hand[j].canSplit = true; //activate split
-            var choice = choice("would you like to split")
+            var choice = confirm("would you like to split");
 
             if(choice===true){
                 console.log("splitting hand");
@@ -106,6 +106,10 @@ Player.prototype.surrender = function() {
         if(choice == true){
             this.surrended = true;
             this.hand[0].stand = true;
+            this.blance += this.bet/2;
+            return true;
+        } else {
+            return false;
         }
     }
 };

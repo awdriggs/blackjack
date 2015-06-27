@@ -1,8 +1,11 @@
-<DOCTYPE!>
+
 <html>
 <head>
 	<title>BlackJack</title>
+	<!-- Styling -->
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+	<!-- Js scripts -->
 	<script src="js/deck.js"></script>
 	<script src="js/card.js"></script>
 	<script src="js/app.js"></script>
@@ -11,10 +14,27 @@
 	<script type="text/javascript" src="js/player.js"></script>
 	<script type="text/javascript" src="js/dealer.js"></script>
 	<script src="js/game.js"></script>
-	
-
 </head>
 <body>
+	<div id='wrapper'>
+		<div id='newGame' class='title_screen'><h1>BlackJack<h1></div>
+		<div id='menu' class="hidden">
+			<h3>Options</h3>
+			number of players 
+			<br><input type="number" value="1">
+			<br>
+			decks in shoe 
+			<br><input type="number" value="1">
+			<br>
+			<input type="checkbox" name="insure" id="insure" class="css-checkbox" checked="checked">
+			<label for="insure" class="css-label">insurance</label>
+			<br>
+			<button id="start_game" type="button">play</button>
+			
 
+		</div> <!-- end menu -->
+		
+
+	</div> <!-- end wrapper --> 
 </body>
 </html>

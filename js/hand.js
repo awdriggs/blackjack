@@ -127,7 +127,6 @@ Hand.prototype.checkOutcome = function(dealerResult) {
 	}
 	//if both are under 21, if the dealer is greater than you, you lose
 	else if(dealerResult.value > this.value){
-		debugger;
 		return 'lose';
 	}
 	//if your value is equal to the dealers value, you push
