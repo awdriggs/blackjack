@@ -126,7 +126,7 @@ label.css-label {
   user-select: none; }
 
 /*game board styling*/
-#dealer {
+#dealer_box {
   width: 1400px;
   height: 260px; }
 
@@ -142,7 +142,7 @@ label.css-label {
     text-align: center;
     color: #8bd781; }
 
-#player {
+#players_box {
   width: 1400px;
   height: 260px; }
 

@@ -2,6 +2,7 @@ console.log('player.js loaded');
 
 //player is an object
 
+//future - use the owner to allow users to give the players name.
 var Player = function(owner) {
     this.balance = 1000;
     this.bet = 0;
@@ -17,7 +18,7 @@ Player.prototype.getHand = function() {
 };
 
 Player.prototype.placeBet = function(amount) {
-    this.bet = amount;
+    this.bet += amount;
     this.balance -= amount;
 };
 
