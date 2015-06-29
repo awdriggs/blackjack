@@ -7,6 +7,7 @@ var Hand = function(owner){
 	this.natural = false;
 	this.value = 0; 
 	this.canSplit = false;
+	this.surrendered = false;
 	//this.outcome = ""; //still needed? 
 }
 
@@ -65,6 +66,7 @@ Hand.prototype.aceFlipper = function(aceControl) {
 
 Hand.prototype.renderCards = function(numCards, showTotal) {
 	var handString = ""
+	
 	for(var i = 0; i < numCards; i++){
 		handString += this.cards[i].value + " of " + this.cards[i].suit + " ";
 	}
@@ -97,8 +99,12 @@ Hand.prototype.checkBust = function() {
 
 Hand.prototype.checkOutcome = function(dealerResult) {
 	console.log('checking outcome')
+	//if there was a surrender
+	if(this.surrendered == true){
+		return 'surrender';
+	} 
 	//if you and dealer both have a natural, you push
-	if(this.natural == true && dealerResult.natural == true){
+	else if(this.natural == true && dealerResult.natural == true){
 		return 'push';
 	}
 	//if the dealer has a natural, you lose
@@ -135,6 +141,11 @@ Hand.prototype.checkOutcome = function(dealerResult) {
 	}
 	
 };
+
+Hand.prototype.surrender = function() {
+    this.surrendered = true;
+    return true;
+;}
 
 
 //Testing 

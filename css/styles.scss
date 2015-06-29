@@ -18,6 +18,8 @@ $blue: #1C77C3;
           border-radius: $width/2;
 }
 
+button:focus, input:focus {outline:0;}
+
 /*rules*/
 body{
 	font-family: 'Roboto Slab', sans-serif;
@@ -100,63 +102,56 @@ body{
 	input:focus, input[type="number"].focus {
 		border-bottom: solid 2px $grey;
 	}
-}
 
-.hidden{
-	display: none;
-}
 
-.visible{
-	display: visible;
-}
+	button{
+		width: 100px;
+		font-size: 1.5rem;
+		margin: 15px;
+		padding: 10px;
+		color: $grey;
+		background: $green;
+		border: solid 2px $grey;
+		border-radius: 5px;
+	}
 
-button{
-	width: 100px;
-	font-size: 1.5rem;
-	margin: 15px;
-	padding: 10px;
-	color: $grey;
-	background: $green;
-	border: solid 2px $grey;
-	border-radius: 5px;
-}
+	button:hover{
+		background-color:$grey;
+		color:$lightGreen;
+	}
 
-button:hover{
-	background-color:$grey;
-	color:$lightGreen;
-}
+	
 
-button:focus, input:focus {outline:0;}
+	/*checkbox stylingd*/
+	input[type=checkbox].css-checkbox {
+		position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+	}
 
-/*checkbox stylingd*/
-input[type=checkbox].css-checkbox {
-	position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
-}
+	input[type=checkbox].css-checkbox + label.css-label {
+		padding-left:29px;
+		height:24px; 
+		display:inline-block;
+		line-height:24px;
+		background-repeat:no-repeat;
+		background-position: 0 0;
+		font-size:24px;
+		vertical-align:middle;
+		cursor:pointer;
 
-input[type=checkbox].css-checkbox + label.css-label {
-	padding-left:29px;
-	height:24px; 
-	display:inline-block;
-	line-height:24px;
-	background-repeat:no-repeat;
-	background-position: 0 0;
-	font-size:24px;
-	vertical-align:middle;
-	cursor:pointer;
+	}
 
-}
-
-input[type=checkbox].css-checkbox:checked + label.css-label {
-	background-position: 0 -24px;
-}
-label.css-label {
-	background-image:url('checkbox.jpg');
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+	input[type=checkbox].css-checkbox:checked + label.css-label {
+		background-position: 0 -24px;
+	}
+	label.css-label {
+		background-image:url('checkbox.jpg');
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
 }
 
 /*game board styling*/
@@ -164,6 +159,17 @@ label.css-label {
 	width: 1400px;
 	height: 260px;
 }
+
+
+.hidden{
+	display: none;
+}
+
+.visible{
+	display: block;
+}
+
+
 
 #banner {
 	width: 1400px;
@@ -218,14 +224,15 @@ label.css-label {
 	.bet_button{
 		@include circle(84px);
 		margin-left: 4%;
+		font-size: 2rem;
+		line-height: 5rem; 
+		color: $white;
+	}	
 
-		
-
+	.one{
+		color: $black;
 	}
-	
 }
-
-
 
 .one{
 	background-color: $white;
@@ -237,6 +244,7 @@ label.css-label {
 
 .twentyFive{
 	background-color: $blue;
+
 }
 
 .hundred{
@@ -247,4 +255,128 @@ label.css-label {
 	background-color: $black;
 }
 
+/*Player Box Styling*/
+#players_box, #dealer_box{
+	text-align: center;
+	display: flex;
+}
+
+.single_Player{
+	margin: 0 auto;
+	max-width: 45%;
+}
+
+.cards{
+	float:left;
+	height: 202px;
+	margin: 0 auto;
+}
+
+.bet_chips{
+	padding-top: 30px;
+	float: left;
+	height: 202px;
+	overflow: hidden;
+	text-align: center;
+	width: 80px;
+	margin-left: 10px;
+
+	.bet_button{
+		@include circle(60px);
+		  margin: -30px auto 0 auto;
+		font-size: 2rem;
+		line-height: 5rem; 
+		/*border: 1px solid $black;*/	
+		border: 1px solid $black;
+	}
+
+	.one{
+		border: 1px solid $lightGrey;
+	}
+}
+
+.single_card{
+	float:left;
+	width:130px;
+	height:202px;
+	margin-left: -65px;
+	border-radius: 10px;
+	border: 1px solid $black;
+	background-color: $white;
+	text-align: left;
+}
+
+.face-down{
+	background-image: url(../img/back.jpg);
+}
+
+#play_menu{
+	
+	button{
+		font-size: 1.5rem;
+		margin: 20px;
+		margin: 20px 10px;
+		color: $grey;
+		border: solid 2px $green;
+		background: $green;
+		border-radius: 0px;
+	}
+
+	button:hover{
+		background-color:$lightGreen;
+		color:$green;
+	}
+
+	button:disabled{
+		color:$lightGrey;
+	}
+
+	button:disabled:hover{
+		background-color:$green;
+	}
+}
+
+
+#deal{
+	margin: 60px auto;
+  	min-width: 30%;
+	
+}
+
+button{
+		font-family: 'Roboto Slab';
+		font-size: 5rem;
+		min-width: 30%;
+		margin: 15px;
+		padding: 10px;
+		color: $green;
+		background: $lightGreen;
+		border: solid 2px $green;
+}
+
+button:hover{
+	background: $green;
+	color: $lightGreen;
+
+}
+
+
+#replayMenu{
+	width: 980px;
+
+  	button{
+  		margin: 20px auto;
+  		color: $grey;
+  		background-color: $green;
+  		font-size: 3rem;
+  		border: 2px solid $grey;
+  		border-radius: 10px
+
+  	}
+
+  	button:hover{
+  		color: $lightGreen;
+  		background-color: $grey;
+  	}
+}
 

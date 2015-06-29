@@ -44,6 +44,7 @@ Dealer.prototype.dealerPlay = function() {
 
     while (this.hand[0].getValue() < 17) { //how to handle soft 17?
         this.hand[0].hit(this.deal());
+        dealerCards(false);
         console.log(this.hand[0].renderCards(this.hand[0].cards.length, true));
     }
 };

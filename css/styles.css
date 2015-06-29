@@ -1,5 +1,8 @@
 /*color*/
 /*mixins*/
+button:focus, input:focus {
+  outline: 0; }
+
 /*rules*/
 body {
   font-family: 'Roboto Slab', sans-serif;
@@ -49,7 +52,8 @@ body {
   background-color: #8bd781;
   color: #6b6054;
   text-align: center;
-  border-radius: 10px; }
+  border-radius: 10px;
+  /*checkbox stylingd*/ }
   #menu h3 {
     margin: 10px; }
   #menu input {
@@ -65,70 +69,60 @@ body {
     margin: 15px; }
   #menu input:focus, #menu input[type="number"].focus {
     border-bottom: solid 2px #6b6054; }
-
-.hidden {
-  display: none; }
-
-.visible {
-  display: visible; }
-
-button {
-  width: 100px;
-  font-size: 1.5rem;
-  margin: 15px;
-  padding: 10px;
-  color: #6b6054;
-  background: #8bd781;
-  border: solid 2px #6b6054;
-  border-radius: 5px; }
-
-button:hover {
-  background-color: #6b6054;
-  color: #d3fad6; }
-
-button:focus, input:focus {
-  outline: 0; }
-
-/*checkbox stylingd*/
-input[type=checkbox].css-checkbox {
-  position: absolute;
-  z-index: -1000;
-  left: -1000px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0; }
-
-input[type=checkbox].css-checkbox + label.css-label {
-  padding-left: 29px;
-  height: 24px;
-  display: inline-block;
-  line-height: 24px;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  font-size: 24px;
-  vertical-align: middle;
-  cursor: pointer; }
-
-input[type=checkbox].css-checkbox:checked + label.css-label {
-  background-position: 0 -24px; }
-
-label.css-label {
-  background-image: url("checkbox.jpg");
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
+  #menu button {
+    width: 100px;
+    font-size: 1.5rem;
+    margin: 15px;
+    padding: 10px;
+    color: #6b6054;
+    background: #8bd781;
+    border: solid 2px #6b6054;
+    border-radius: 5px; }
+  #menu button:hover {
+    background-color: #6b6054;
+    color: #d3fad6; }
+  #menu input[type=checkbox].css-checkbox {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0; }
+  #menu input[type=checkbox].css-checkbox + label.css-label {
+    padding-left: 29px;
+    height: 24px;
+    display: inline-block;
+    line-height: 24px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-size: 24px;
+    vertical-align: middle;
+    cursor: pointer; }
+  #menu input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 -24px; }
+  #menu label.css-label {
+    background-image: url("checkbox.jpg");
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
 
 /*game board styling*/
 #dealer_box {
   width: 1400px;
   height: 260px; }
+
+.hidden {
+  display: none; }
+
+.visible {
+  display: block; }
 
 #banner {
   width: 1400px;
@@ -171,7 +165,12 @@ label.css-label {
     -webkit-border-radius: 42px;
     -moz-border-radius: 42px;
     border-radius: 42px;
-    margin-left: 4%; }
+    margin-left: 4%;
+    font-size: 2rem;
+    line-height: 5rem;
+    color: #edf2eb; }
+  #footer .one {
+    color: #303030; }
 
 .one {
   background-color: #edf2eb; }
@@ -187,3 +186,99 @@ label.css-label {
 
 .fiveHundred {
   background-color: #303030; }
+
+/*Player Box Styling*/
+#players_box, #dealer_box {
+  text-align: center;
+  display: flex; }
+
+.single_Player {
+  margin: 0 auto;
+  max-width: 45%; }
+
+.cards {
+  float: left;
+  height: 202px;
+  margin: 0 auto; }
+
+.bet_chips {
+  padding-top: 30px;
+  float: left;
+  height: 202px;
+  overflow: hidden;
+  text-align: center;
+  width: 80px;
+  margin-left: 10px; }
+  .bet_chips .bet_button {
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    margin: -30px auto 0 auto;
+    font-size: 2rem;
+    line-height: 5rem;
+    /*border: 1px solid $black;*/
+    border: 1px solid #303030; }
+  .bet_chips .one {
+    border: 1px solid #cfd3cd; }
+
+.single_card {
+  float: left;
+  width: 130px;
+  height: 202px;
+  margin-left: -65px;
+  border-radius: 10px;
+  border: 1px solid #303030;
+  background-color: #edf2eb;
+  text-align: left; }
+
+.face-down {
+  background-image: url(../img/back.jpg); }
+
+#play_menu button {
+  font-size: 1.5rem;
+  margin: 20px;
+  margin: 20px 10px;
+  color: #6b6054;
+  border: solid 2px #8bd781;
+  background: #8bd781;
+  border-radius: 0px; }
+#play_menu button:hover {
+  background-color: #d3fad6;
+  color: #8bd781; }
+#play_menu button:disabled {
+  color: #cfd3cd; }
+#play_menu button:disabled:hover {
+  background-color: #8bd781; }
+
+#deal {
+  margin: 60px auto;
+  min-width: 30%; }
+
+button {
+  font-family: 'Roboto Slab';
+  font-size: 5rem;
+  min-width: 30%;
+  margin: 15px;
+  padding: 10px;
+  color: #8bd781;
+  background: #d3fad6;
+  border: solid 2px #8bd781; }
+
+button:hover {
+  background: #8bd781;
+  color: #d3fad6; }
+
+#replayMenu {
+  width: 980px; }
+  #replayMenu button {
+    margin: 20px auto;
+    color: #6b6054;
+    background-color: #8bd781;
+    font-size: 3rem;
+    border: 2px solid #6b6054;
+    border-radius: 10px; }
+  #replayMenu button:hover {
+    color: #d3fad6;
+    background-color: #6b6054; }

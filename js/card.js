@@ -4,7 +4,7 @@ console.log('card.js loaded');
 var Card = function(suit, value) {
     this.suit = suit;
     this.value = value;
-}
+};
 
 //for testing
 Card.prototype.printCard = function(first_argument) {

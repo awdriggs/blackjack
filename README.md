@@ -61,19 +61,9 @@ Behaviors
 +checkoutcome, see who won, if user winds double the bet and run the next hand. If the dealer won set the bet to 0.
 +clear hand, remove all the cards from the player and dealers hand, add them to the discard pile.
 
-##HTML Structure##
-+wrapper div, screen dimension? 1400 by 800
-+title div, absolute position in the top corner?
-
-on start screen
-+div in center of page
-+checkbox for insurance
-+checkbox for surrender
-
 
 known issues
-+dealer deals two many cards in multi player mode
-
++listed in trello
 
 
 
