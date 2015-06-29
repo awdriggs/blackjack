@@ -51,9 +51,9 @@ Hand.prototype.aceFlipper = function(aceControl) {
 	aceValue = aceControl;
 
 	for(var i = 0; i < this.cards.length; i++){
-		if(this.cards[i].value === "Ace"){
+		if(this.cards[i].value === "A"){
 			checkValue += aceValue;
-		} else if(this.cards[i].value === "King"|| this.cards[i].value === "Queen" || this.cards[i].value === "Jack"){
+		} else if(this.cards[i].value === "K"|| this.cards[i].value === "Q" || this.cards[i].value === "J"){
 			checkValue += 10
 		} else {
 			checkValue += this.cards[i].value;

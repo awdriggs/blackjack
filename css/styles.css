@@ -21,7 +21,7 @@ body {
   #newGame h1 {
     font-weight: 700;
     text-align: center;
-    color: #8bd781; }
+    color: #8BD781; }
 
 .title_screen {
   width: 700px;
@@ -40,7 +40,7 @@ body {
     font-size: 3rem; }
 
 #newGame:hover {
-  background-color: #8bd781; }
+  background-color: #8BD781; }
   #newGame:hover h1 {
     color: #d3fad6; }
 
@@ -49,7 +49,7 @@ body {
   width: 300px;
   padding: 10px;
   position: relative;
-  background-color: #8bd781;
+  background-color: #8BD781;
   color: #6b6054;
   text-align: center;
   border-radius: 10px;
@@ -75,7 +75,7 @@ body {
     margin: 15px;
     padding: 10px;
     color: #6b6054;
-    background: #8bd781;
+    background: #8BD781;
     border: solid 2px #6b6054;
     border-radius: 5px; }
   #menu button:hover {
@@ -116,7 +116,7 @@ body {
 /*game board styling*/
 #dealer_box {
   width: 1400px;
-  height: 260px; }
+  height: 210px; }
 
 .hidden {
   display: none; }
@@ -134,18 +134,18 @@ body {
     max-width: 740px;
     font-size: 3rem;
     text-align: center;
-    color: #8bd781; }
+    color: #8BD781; }
 
 #players_box {
   width: 1400px;
-  height: 260px; }
+  height: 220px; }
 
 #footer {
   color: #6b6054;
   width: 1400px;
   height: 130px;
   border-radius: 10px;
-  background-color: #8bd781;
+  background-color: #8BD781;
   text-align: center;
   display: flex;
   font-size: 3.4rem; }
@@ -168,21 +168,21 @@ body {
     margin-left: 4%;
     font-size: 2rem;
     line-height: 5rem;
-    color: #edf2eb; }
+    color: #EDF2EB; }
   #footer .one {
     color: #303030; }
 
 .one {
-  background-color: #edf2eb; }
+  background-color: #EDF2EB; }
 
 .five {
   background-color: #d71816; }
 
 .twentyFive {
-  background-color: #1c77c3; }
+  background-color: #1C77C3; }
 
 .hundred {
-  background-color: #f4d54a; }
+  background-color: #F4D54A; }
 
 .fiveHundred {
   background-color: #303030; }
@@ -221,7 +221,7 @@ body {
     /*border: 1px solid $black;*/
     border: 1px solid #303030; }
   .bet_chips .one {
-    border: 1px solid #cfd3cd; }
+    border: 1px solid #CFD3CD; }
 
 .single_card {
   float: left;
@@ -230,7 +230,7 @@ body {
   margin-left: -65px;
   border-radius: 10px;
   border: 1px solid #303030;
-  background-color: #edf2eb;
+  background-color: #EDF2EB;
   text-align: left; }
 
 .face-down {
@@ -241,16 +241,16 @@ body {
   margin: 20px;
   margin: 20px 10px;
   color: #6b6054;
-  border: solid 2px #8bd781;
-  background: #8bd781;
+  border: solid 2px #8BD781;
+  background: #8BD781;
   border-radius: 0px; }
 #play_menu button:hover {
   background-color: #d3fad6;
-  color: #8bd781; }
+  color: #8BD781; }
 #play_menu button:disabled {
-  color: #cfd3cd; }
+  color: #CFD3CD; }
 #play_menu button:disabled:hover {
-  background-color: #8bd781; }
+  background-color: #8BD781; }
 
 #deal {
   margin: 60px auto;
@@ -258,16 +258,14 @@ body {
 
 button {
   font-family: 'Roboto Slab';
-  font-size: 5rem;
+  font-size: 4rem;
   min-width: 30%;
-  margin: 15px;
-  padding: 10px;
-  color: #8bd781;
+  color: #8BD781;
   background: #d3fad6;
-  border: solid 2px #8bd781; }
+  border: solid 2px #8BD781; }
 
 button:hover {
-  background: #8bd781;
+  background: #8BD781;
   color: #d3fad6; }
 
 #replayMenu {
@@ -275,10 +273,24 @@ button:hover {
   #replayMenu button {
     margin: 20px auto;
     color: #6b6054;
-    background-color: #8bd781;
+    background-color: #8BD781;
     font-size: 3rem;
     border: 2px solid #6b6054;
     border-radius: 10px; }
   #replayMenu button:hover {
     color: #d3fad6;
     background-color: #6b6054; }
+
+.suit {
+  margin: 5px 8px; }
+
+.value {
+  margin: 5px 10px; }
+
+.red {
+  color: #d71816; }
+
+.black {
+  color: #303030; }
+
+/*# sourceMappingURL=styles.css.map */

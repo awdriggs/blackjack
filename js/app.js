@@ -250,24 +250,62 @@ var showCards = function() {
 
 		//loop through each card and create elements
 		for(var j=0; j<currentPlayer.hand[0].cards.length; j++){
+			var stringSuite = game.players[i].hand[0].cards[j].suit;
+
+			var color = getColor(stringSuite)
+		
 			var single = document.createElement('div');
 			single.className = "single_card";
 
+			var value = document.createElement('div');
+			value.className = 'value ' + color;
+			
 			var suit = document.createElement('div');
-			suit.className = 'suit';
+			suit.className = 'suit ' + color;
+
+			single.appendChild(value);
 			single.appendChild(suit);
 
-			var value = document.createElement('div');
-			value.className = 'value';
-			single.appendChild(value);
+			
+			var symbol = '';
+			symbol = getSymbol(stringSuite)
 
-			suit.innerHTML = game.players[i].hand[0].cards[j].suit;
+			suit.innerHTML = symbol;
 			value.innerHTML = game.players[i].hand[0].cards[j].value;
+			
+			
+
 			cards[0].appendChild(single);
 		}
 	}
 }
 
+var getSymbol = function(stringSuite){
+		var symbol = '';
+
+		if(stringSuite == 'Heart'){
+				symbol = '&#9825';
+			} else if(stringSuite == "Spade"){
+				symbol = '&#x2664';
+			} else if(stringSuite == 'Club'){
+				symbol = '&#9831';
+			} else if(stringSuite =='Diamond'){
+				symbol = '&#x25c7';
+			}
+
+			return symbol
+}
+
+var getColor = function(stringSuite){
+			var color = '';
+			if(stringSuite == "Heart" || stringSuite == "Diamond"){
+				//set classname to red
+				return 'red';
+			} else if(stringSuite == "Spade" || stringSuite == "Club"){
+				//set classname to black
+				return 'black';
+			}
+}
 
 var dealerCards = function(hide) {
 	//control is to handle whether the second card should be shown or not!
@@ -284,19 +322,24 @@ var dealerCards = function(hide) {
 	for(var i=0; i<dealer.cards.length; i++){
 		var single = document.createElement('div');
 		single.className = 'single_card';
-	
-		var suit = document.createElement('div');
-		suit.className = 'suit';
-		single.appendChild(suit);
+		
+		var stringSuite = dealer.cards[i].suit;
+		var symbol = getSymbol(stringSuite);
+		var color = getColor(stringSuite);
 
 		var value = document.createElement('div');
-		value.className = 'value';
+		value.className = 'value ' + color;
 		single.appendChild(value);
 
-		suit.innerHTML = dealer.cards[i].suit;
+		var suit = document.createElement('div');
+		suit.className = 'suit ' + color;
+		single.appendChild(suit);
+
 		value.innerHTML = dealer.cards[i].value;
+		
+		
 
-
+		suit.innerHTML = symbol;
 
 		if(i == 1 && hide == true){
 			//hide the cards suit and value
@@ -347,6 +390,7 @@ var play = function(){
 				currentPlayerIndex++;
 				updatePlayer();
 			} else {
+				activateButtons();
 				finishRound();	
 			}
 		}

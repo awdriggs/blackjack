@@ -157,7 +157,7 @@ body{
 /*game board styling*/
 #dealer_box {
 	width: 1400px;
-	height: 260px;
+	height: 210px;
 }
 
 
@@ -189,7 +189,7 @@ body{
 
 #players_box {
 	width: 1400px;
-	height: 260px;
+	height: 220px;
 }
 
 #footer {
@@ -345,10 +345,8 @@ body{
 
 button{
 		font-family: 'Roboto Slab';
-		font-size: 5rem;
+		font-size: 4rem;
 		min-width: 30%;
-		margin: 15px;
-		padding: 10px;
 		color: $green;
 		background: $lightGreen;
 		border: solid 2px $green;
@@ -379,4 +377,23 @@ button:hover{
   		background-color: $grey;
   	}
 }
+
+.suit{
+	margin: 5px 8px;
+
+}
+
+.value{
+
+	margin: 5px 10px;
+}
+
+.red{
+	color: $red;
+}
+
+.black{
+	color: $black;
+}
+
 
