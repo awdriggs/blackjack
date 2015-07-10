@@ -53,10 +53,4 @@ var game = {
         }
         this.dealer.hand = [];
     }
-
-    //function to flush the hand of each player
-      // for(var i = 0; i < this.players.length; i++) {
-      //       this.players[i].result(this.dealer.hand[0]);
-      //   }
-
 }

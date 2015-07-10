@@ -313,6 +313,7 @@ var dealerCards = function(hide) {
 	dealer = game.dealer.hand[0];
 	var cards = document.getElementById('dealer').getElementsByClassName('cards');
 
+	//pop out the 
 	var handLength = cards[0].childNodes.length;
 		//remove the previous cards, go backwards through because otherwise index changes
 		for(var j=handLength-1; j>=0; j--){
